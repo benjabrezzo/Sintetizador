@@ -51,7 +51,12 @@ sintetizador/                                raíz del repo y del proyecto de MC
 - MCUXpresso 25.6 dentro del distrobox `ubuntu-mcuxpresso`. El proyecto depende de `CMSISv2p00_LPC17xx`.
 - El include path `${workspace_loc:/CMSISv2p00_LPC17xx/Drivers/inc}` ya está en `.cproject`. Al mover los
   fuentes, el IDE también tiene que apuntar a `firmware/src` (Source Location) y a `firmware/inc` (Includes).
-- La biblioteca de C es hoy Redlib `none`. El diagnóstico por semihosting necesita Redlib (semihost).
+- La biblioteca de C es Redlib (semihost). El `printf` va al depurador y solo se llama si `CoreDebug->DHCSR`
+  indica `C_DEBUGEN`; sin depurador, el `BKPT` colgaría el arranque. El reinicio sin depurador se prueba
+  desenchufando el USB, no con el botón de reset.
+- Tests: `make -C firmware/tests test` (cada `test_*.c` es un programa) y, en `app/`, `.venv/bin/pytest`.
+- Los drivers vienen de `../../LPC17xx-CMSIS-Driver-Enhancement`; en Linux requieren `LPC17xx.h` con mayúsculas
+  en `lpc17xx_clkpwr.h` y `lpc17xx_pinsel.h` (ver README).
 - `libCMSISv2p00_LPC17xx.a` ya trae los drivers compilados. Si se cambia un driver, hay que recompilar la lib.
 - CCLK = 100 MHz (`SystemInit`; verificar `SystemCoreClock`). `DAC_Init()` y `TIM_InitTimer` dejan su PCLK en CCLK/4 = 25 MHz.
 - Estilo: identificadores en inglés y camelCase como en el driver, comentarios en español, `static` para lo
