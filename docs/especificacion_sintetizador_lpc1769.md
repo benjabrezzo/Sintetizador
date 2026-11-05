@@ -841,12 +841,12 @@ de trabajo organizada.
 
 ### Criterios de aceptación
 
--   [ ] El proyecto compila correctamente.
--   [ ] El firmware se descarga y ejecuta.
--   [ ] La prueba de vida funciona.
--   [ ] El repositorio contiene el proyecto base.
--   [ ] El entorno de desarrollo queda documentado.
--   [ ] Los tests de ejemplo se ejecutan en la PC y con pytest.
+-   [x] El proyecto compila correctamente.
+-   [x] El firmware se descarga y ejecuta.
+-   [x] La prueba de vida funciona.
+-   [x] El repositorio contiene el proyecto base.
+-   [x] El entorno de desarrollo queda documentado.
+-   [x] Los tests de ejemplo se ejecutan en la PC y con pytest.
 
 **No avanzar hasta cumplir todos los criterios.**
 

@@ -1,6 +1,6 @@
 # Story 1: Reconstruir el firmware y verlo correr en placa
 
-**Bloque:** 0 · **Spec:** §6 Bloque 0, §7.6 · **Estado:** pendiente
+**Bloque:** 0 · **Spec:** §6 Bloque 0, §7.6 · **Estado:** terminada
 
 ## Story
 Como evaluador de la cátedra, quiero reconstruir el firmware desde cero y verlo correr en la placa, para comprobar que el proyecto es reproducible.
@@ -8,9 +8,9 @@ Como evaluador de la cátedra, quiero reconstruir el firmware desde cero y verlo
 ## Criterios de aceptación
 Se comprueban primero en esta PC y después en la notebook con CachyOS, adonde el proyecto llega por GitHub.
 
-- [ ] Dado el proyecto en su workspace con los drivers ya cargados, cuando hago clean y compilo en Debug, entonces compila sin errores ni warnings en el código del proyecto.
-- [ ] Dado ese firmware descargado en la LPC1769, cuando lo ejecuto con el depurador, entonces el LED alterna con un período medido de 1 s ± 1 % y la consola muestra un mensaje de arranque que informa un reloj de 100 MHz; y cuando reinicio la placa sin el depurador, el LED alterna igual.
-- [ ] Dado el proyecto, cuando ejecuto los tests de ejemplo de lógica en la PC y los de la aplicación, entonces ambos pasan, y si rompo un test el comando termina con error.
+- [x] Dado el proyecto en su workspace con los drivers ya cargados, cuando hago clean y compilo en Debug, entonces compila sin errores ni warnings en el código del proyecto.
+- [x] Dado ese firmware descargado en la LPC1769, cuando lo ejecuto con el depurador, entonces el LED alterna con un período medido de 1 s ± 1 % y la consola muestra un mensaje de arranque que informa un reloj de 100 MHz; y cuando reinicio la placa sin el depurador, el LED alterna igual.
+- [x] Dado el proyecto, cuando ejecuto los tests de ejemplo de lógica en la PC y los de la aplicación, entonces ambos pasan, y si rompo un test el comando termina con error.
 
 ## Plan
 - Actualizar las rutas en la spec, la constitución, el backlog y las instrucciones del proyecto; después, reorganizar las carpetas y apuntar el IDE a las nuevas.
