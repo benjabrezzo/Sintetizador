@@ -15,6 +15,8 @@ Si algo de acá choca con la spec, manda la spec. Un cambio de comportamiento se
 - Un bloque se aprueba con todos sus criterios marcados en la spec y la evidencia en `docs/evidencia/`.
 - Los tests pasan antes de cerrar una story (spec §7.6).
 - No ejecutar comandos sin el OK de Benja (regla general del equipo).
+- Los commits los hace Benja: Claude prepara los cambios y sugiere el mensaje, pero no corre `git commit`.
+- Antes de cada prueba con hardware, avisar a Benja qué componentes tienen que estar armados (backlog, notas).
 
 ## Estructura
 
@@ -55,14 +57,15 @@ sintetizador/                                raíz del repo y del proyecto de MC
   indica `C_DEBUGEN`; sin depurador, el `BKPT` colgaría el arranque. El reinicio sin depurador se prueba
   desenchufando el USB, no con el botón de reset.
 - Tests: `make -C firmware/tests test` (cada `test_*.c` es un programa) y, en `app/`, `.venv/bin/pytest`.
-- Los drivers vienen de `../../LPC17xx-CMSIS-Driver-Enhancement`; en Linux requieren `LPC17xx.h` con mayúsculas
-  en `lpc17xx_clkpwr.h` y `lpc17xx_pinsel.h` (ver README).
+- Los drivers viven en un repo aparte (`LPC17xx-CMSIS-Driver-Enhancement`), fuera de este. El IDE los resuelve por
+  nombre de proyecto en el workspace, así que la ruta en disco cambia según la máquina. En Linux requieren
+  `LPC17xx.h` con mayúsculas en `lpc17xx_clkpwr.h` y `lpc17xx_pinsel.h` (ver README).
 - `libCMSISv2p00_LPC17xx.a` ya trae los drivers compilados. Si se cambia un driver, hay que recompilar la lib.
 - CCLK = 100 MHz (`SystemInit`; verificar `SystemCoreClock`). `DAC_Init()` y `TIM_InitTimer` dejan su PCLK en CCLK/4 = 25 MHz.
 - Estilo: identificadores en inglés y camelCase como en el driver, comentarios en español, `static` para lo
   privado de cada módulo y `volatile` para lo que comparte una ISR.
 - Compilar con `-Wall` y sin warnings nuevos.
-- Referencia de DAC + DMA con LLI circular: `../main_dac_sine_dma/src/main_dac_sine_dma.c`. Ojo: ahí
+- Referencia de DAC + DMA con LLI circular: `docs/referencia/main_dac_sine_dma.c` (solo se lee, no se compila). Ojo: ahí
   `dstMemAddr = (uint32_t)LPC_DAC->DACR` lee el valor y no la dirección. Es inofensivo en M2P, pero no hay que copiarlo.
 
 ## Memoria (spec §3.10)

@@ -38,7 +38,8 @@ locales sin revisar. Hasta que el repo de drivers los incluya, hay que aplicarlo
 
 ## Reconstruir y ver el firmware en la placa
 
-1. Clonar este repo y el de los drivers, en carpetas hermanas.
+1. Clonar este repo y el de los drivers. La ubicación en disco da igual: el IDE resuelve la biblioteca
+   por nombre de proyecto dentro del workspace (paso 3).
 2. Aplicar el cambio de mayúsculas en los dos headers:
    ```bash
    cd LPC17xx-CMSIS-Driver-Enhancement/CMSISv2p00_LPC17xx/Drivers/inc
