@@ -1,0 +1,11 @@
+# Artefactos de compilación de MCUXpresso
+Debug/
+Release/
+
+# Tests de lógica en la PC (gcc)
+firmware/tests/build/
+
+# Aplicación Python
+app/.venv/
+__pycache__/
+.pytest_cache/
