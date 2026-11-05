@@ -83,6 +83,7 @@ El proyecto ve los dos bancos como una sola región `RamAHB32` (alias `RAM2`). `
 | DAC | AOUT P0.26 | |
 | UART0 | TXD0 P0.2 / RXD0 P0.3 | USB-TTL de 3,3 V; ⚠️ ocupa AD0.7/AD0.6 |
 | Datos de matrices | P0.0 | con BSS138 (§3.15); confirmar que esté libre en la placa |
+| LED de la placa | P0.22 | prueba de vida (Bloque 0), alterna con SysTick |
 
 ## Audio
 

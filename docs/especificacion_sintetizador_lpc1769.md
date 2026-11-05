@@ -578,6 +578,7 @@ y la codificación de las matrices.
   Salida del DAC               AOUT P0.26
   UART0                        TXD0 P0.2, RXD0 P0.3, adaptador USB-TTL de 3,3 V
   Datos de las matrices        P0.0, con BSS138 (`FIOPIN0` y `FIOMASK`)
+  LED de la placa              P0.22, salida (prueba de vida del Bloque 0)
 
 ### 3.14. Protocolo UART
 
