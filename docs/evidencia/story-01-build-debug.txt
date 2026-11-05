@@ -1,8 +1,9 @@
-Story 1 · M1 · Build limpio de la configuración Debug (MCUXpresso 25.6, PC de escritorio Fedora)
-Procedimiento: Project > Clean (sintetizador, "Start a build immediately"). Log de la consola CDT Build, sin editar.
+Story 1 · M1 · Build de la configuración Debug con la prueba de vida (MCUXpresso 25.6, PC de escritorio Fedora)
+Procedimiento: Project > Clean, luego build de Debug. Log de la consola CDT Build, sin editar.
+Código: LED P0.22 alternado desde SysTick (firmware/src/sintetizador.c, firmware/inc/config.h).
 ------------------------------------------------------------------------------------------------------------
 
-11:46:49 **** Build of configuration Debug for project sintetizador ****
+12:11:59 **** Build of configuration Debug for project sintetizador ****
 make -r -j12 all
 Building file: ../firmware/src/cr_startup_lpc175x_6x.c
 Building file: ../firmware/src/crp.c
@@ -10,8 +11,8 @@ Building file: ../firmware/src/sintetizador.c
 Invoking: MCU C Compiler
 arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_CMSIS=CMSISv2p00_LPC17xx -D__LPC17XX__ -D__REDLIB__ -I"/home/benja/Documentos/Facultad/electronica_digital_III/examenElecDigIII/LPC17xx-CMSIS-Driver-Enhancement/CMSISv2p00_LPC17xx/inc" -I"/home/benja/Documentos/Facultad/electronica_digital_III/examenElecDigIII/workspace_drivers/sintetizador/firmware/inc" -I"/home/benja/Documentos/Facultad/electronica_digital_III/examenElecDigIII/LPC17xx-CMSIS-Driver-Enhancement/CMSISv2p00_LPC17xx/Drivers/inc" -O0 -fno-common -g3 -gdwarf-4 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -fmerge-constants -fmacro-prefix-map="../firmware/src/"= -mcpu=cortex-m3 -mthumb -fstack-usage -specs=redlib.specs -MMD -MP -MF"firmware/src/cr_startup_lpc175x_6x.d" -MT"firmware/src/cr_startup_lpc175x_6x.o" -MT"firmware/src/cr_startup_lpc175x_6x.d" -o "firmware/src/cr_startup_lpc175x_6x.o" "../firmware/src/cr_startup_lpc175x_6x.c"
 Invoking: MCU C Compiler
-arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_CMSIS=CMSISv2p00_LPC17xx -D__LPC17XX__ -D__REDLIB__ -I"/home/benja/Documentos/Facultad/electronica_digital_III/examenElecDigIII/LPC17xx-CMSIS-Driver-Enhancement/CMSISv2p00_LPC17xx/inc" -I"/home/benja/Documentos/Facultad/electronica_digital_III/examenElecDigIII/workspace_drivers/sintetizador/firmware/inc" -I"/home/benja/Documentos/Facultad/electronica_digital_III/examenElecDigIII/LPC17xx-CMSIS-Driver-Enhancement/CMSISv2p00_LPC17xx/Drivers/inc" -O0 -fno-common -g3 -gdwarf-4 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -fmerge-constants -fmacro-prefix-map="../firmware/src/"= -mcpu=cortex-m3 -mthumb -fstack-usage -specs=redlib.specs -MMD -MP -MF"firmware/src/crp.d" -MT"firmware/src/crp.o" -MT"firmware/src/crp.d" -o "firmware/src/crp.o" "../firmware/src/crp.c"
 Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_CMSIS=CMSISv2p00_LPC17xx -D__LPC17XX__ -D__REDLIB__ -I"/home/benja/Documentos/Facultad/electronica_digital_III/examenElecDigIII/LPC17xx-CMSIS-Driver-Enhancement/CMSISv2p00_LPC17xx/inc" -I"/home/benja/Documentos/Facultad/electronica_digital_III/examenElecDigIII/workspace_drivers/sintetizador/firmware/inc" -I"/home/benja/Documentos/Facultad/electronica_digital_III/examenElecDigIII/LPC17xx-CMSIS-Driver-Enhancement/CMSISv2p00_LPC17xx/Drivers/inc" -O0 -fno-common -g3 -gdwarf-4 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -fmerge-constants -fmacro-prefix-map="../firmware/src/"= -mcpu=cortex-m3 -mthumb -fstack-usage -specs=redlib.specs -MMD -MP -MF"firmware/src/crp.d" -MT"firmware/src/crp.o" -MT"firmware/src/crp.d" -o "firmware/src/crp.o" "../firmware/src/crp.c"
 arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_CMSIS=CMSISv2p00_LPC17xx -D__LPC17XX__ -D__REDLIB__ -I"/home/benja/Documentos/Facultad/electronica_digital_III/examenElecDigIII/LPC17xx-CMSIS-Driver-Enhancement/CMSISv2p00_LPC17xx/inc" -I"/home/benja/Documentos/Facultad/electronica_digital_III/examenElecDigIII/workspace_drivers/sintetizador/firmware/inc" -I"/home/benja/Documentos/Facultad/electronica_digital_III/examenElecDigIII/LPC17xx-CMSIS-Driver-Enhancement/CMSISv2p00_LPC17xx/Drivers/inc" -O0 -fno-common -g3 -gdwarf-4 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -fmerge-constants -fmacro-prefix-map="../firmware/src/"= -mcpu=cortex-m3 -mthumb -fstack-usage -specs=redlib.specs -MMD -MP -MF"firmware/src/sintetizador.d" -MT"firmware/src/sintetizador.o" -MT"firmware/src/sintetizador.d" -o "firmware/src/sintetizador.o" "../firmware/src/sintetizador.c"
 Finished building: ../firmware/src/crp.c
 
@@ -23,15 +24,15 @@ Building target: sintetizador.axf
 Invoking: MCU Linker
 arm-none-eabi-gcc -nostdlib -L"/home/benja/Documentos/Facultad/electronica_digital_III/examenElecDigIII/LPC17xx-CMSIS-Driver-Enhancement/CMSISv2p00_LPC17xx/Debug" -Xlinker -Map="sintetizador.map" -Xlinker --cref -Xlinker --gc-sections -Xlinker -print-memory-usage -mcpu=cortex-m3 -mthumb -T sintetizador_Debug.ld -o "sintetizador.axf" ./firmware/src/cr_startup_lpc175x_6x.o ./firmware/src/crp.o ./firmware/src/sintetizador.o    -lCMSISv2p00_LPC17xx
 Memory region         Used Size  Region Size  %age Used
-       MFlash512:        1000 B       512 KB      0.19%
-        RamLoc32:           0 B        32 KB      0.00%
+       MFlash512:        1380 B       512 KB      0.26%
+        RamLoc32:           8 B        32 KB      0.02%
         RamAHB32:           0 B        32 KB      0.00%
 Finished building target: sintetizador.axf
 
 Performing post-build steps
 arm-none-eabi-size "sintetizador.axf"; # arm-none-eabi-objcopy -v -O binary "sintetizador.axf" "sintetizador.bin" ; # checksum -p LPC1769 -d "sintetizador.bin";
    text       data        bss        dec        hex    filename
-   1000          0          0       1000        3e8    sintetizador.axf
+   1376          4          4       1384        568    sintetizador.axf
 
 
-11:46:49 Build Finished. 0 errors, 0 warnings. (took 359ms)
+12:11:59 Build Finished. 0 errors, 0 warnings. (took 360ms)

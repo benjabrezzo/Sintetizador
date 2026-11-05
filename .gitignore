@@ -2,6 +2,9 @@
 Debug/
 Release/
 
+# Configuraciones de depuración: el IDE las regenera y llevan el serial de la sonda
+*.launch
+
 # Tests de lógica en la PC (gcc)
 firmware/tests/build/
 
